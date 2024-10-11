@@ -1,4 +1,4 @@
-function getListStudents {
+export default function getListStudents() {
  return [
     {
       id: 1,
@@ -17,5 +17,3 @@ function getListStudents {
     }
   ];
 }
-
-export default getListStudents;
