@@ -5,3 +5,5 @@ function getListStudents() {
 	let ArrayList = [Guillaume, James, Serena];
 	return ArrayList;
 }
+
+export default getListStudents;
