@@ -1,9 +1,21 @@
-function getListStudents() {
-	const Guillaume = { id: 1, firstName: 'Guillaume', location: 'San Francesco' };
-	const James = { id: 2, firstName: 'James', location: 'Columbia' };
-	const Serena = { id: 3, firstName: 'Serena', location: 'San Francesco' };
-	let ArrayList = [Guillaume, James, Serena];
-	return ArrayList;
+function getListStudents {
+ return [
+    {
+      id: 1,
+      firstName: 'Guillaume',
+      location: 'San Francisco'
+    },
+    {
+      id: 2,
+      firstName: 'James',
+      location: 'Columbia'
+    },
+    {
+      id: 5,
+      firstName: 'Serena',
+      location: 'San Francisco'
+    }
+  ];
 }
 
 export default getListStudents;
