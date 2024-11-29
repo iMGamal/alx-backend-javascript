@@ -1,8 +1,7 @@
 console.log(`Welcome to Holberton School, what is your name?`);
 
 process.stdin.on("input", (input) => {
-                console.log(`${input.toString()}`);
-                console.log(`Your name is: ${input.toString()}`);
+                process.stdout.write(`Your name is: ${input.toString()}`);
 });
 
 if (process.stdin.isTTY) {
