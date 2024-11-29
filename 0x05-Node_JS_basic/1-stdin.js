@@ -1,13 +1,15 @@
-console.log(`Welcome to Holberton School, what is your name?`);
-
-process.stdin.on("input", (input) => {
-                process.stdout.write(`Your name is: ${input.toString()}`);
-});
+console.log('Welcome to Holberton School, what is your name?');
 
 if (process.stdin.isTTY) {
-	process.exit();
+  process.stdin.on('data', (data) => {
+    console.log(`Your name is: ${data.toString()}`);
+    process.exit();
+  });
 }
 else {
-	console.log(`This important software is now closing`);
-	process.exit();
+  process.stdin.on('data', (data) => {
+    console.log(`Your name is: ${data.toString()}`);
+    process.exit();
+  });
+  console.log('This important software is now closing');
 }
