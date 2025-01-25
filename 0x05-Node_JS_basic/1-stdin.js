@@ -1,7 +1,5 @@
 process.stdout.write('Welcome to ALX, what is your name?\n');
 
-process.stdin.resume();
-
 if (process.stdin.isTTY) {
 	process.stdin.on('data', (data) => {
 		process.stdout.write(`Your name is: ${data.toString()}`);
