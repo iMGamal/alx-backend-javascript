@@ -1,17 +1,17 @@
-const readline = require('readline');
+// 1-stdin.js
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  terminal: process.stdin.TTY,
-  output: process.stdout
+// Display the initial message
+process.stdout.write("Welcome to ALX, what is your name?\n");
+
+// Read input from stdin
+process.stdin.on("data", (data) => {
+  const name = data.toString().trim(); // Trim any extra whitespace or newline
+  console.log(`Your name is: ${name}`);
+  console.log("This important software is now closing");
+  process.exit(); // End the program
 });
 
-rl.question('Welcome to ALX, what is your name?\n', (name) => {
-  process.stdout.write(`Your name is: ${name}\n`);
-  
-  if (!process.stdin.isTTY) {
-    process.stdout.write("This important software is now closing\n");
-  }
-  
-  rl.close();
+// Handle program exit
+process.on("exit", () => {
+  console.log(); // Ensure a new line is added at the end
 });
