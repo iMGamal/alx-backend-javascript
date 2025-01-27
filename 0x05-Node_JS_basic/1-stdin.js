@@ -1,13 +1,18 @@
-process.stdout.write('Welcome to ALX, what is your name?\n');
+const readline = require('readline');
 
-process.stdin.on('readable', () => {
-  const chunk = process.stdin.read();
-  if (chunk !== null) {
-    process.stdout.write(`Your name is: ${chunk}`);
-    process.exit();
-  }
+const r1 = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
 });
 
-process.stdin.on('end', () => {
-  process.stdout.write('This important software is now closing\n');
+r1.question('Welcome to ALX, what is your name?\n', (name) => {
+  if (process.stdin.isTTY) {
+    console.log(`Your name is: ${name}`);
+    r1.close();
+  }
+  else {
+    console.log(`Your name is: ${name}`);
+    console.log("This important software is now closing");
+    r1.close();
+  }
 });
