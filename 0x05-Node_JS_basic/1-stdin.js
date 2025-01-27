@@ -2,17 +2,14 @@ const readline = require('readline');
 
 const r1 = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
+  terminal: process.stdin.isTTY
 });
 
 r1.question('Welcome to ALX, what is your name?\n', (name) => {
-  if (process.stdin.isTTY) {
-    console.log(`Your name is: ${name}`);
-    r1.close();
+  console.log(`Your name is: ${name}\r`);
+  if (!process.stdin.isTTY) {
+    console.log("This important software is now closing\r");
   }
-  else {
-    console.log(`Your name is: ${name}`);
-    console.log("This important software is now closing");
-    r1.close();
-  }
+  r1.close();
 });
