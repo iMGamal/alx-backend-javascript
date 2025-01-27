@@ -23,6 +23,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react": "^7.37.4",
     "mocha": "^11.1.0",
     "nodemon": "^2.0.2",
     "request": "^2.88.0",
